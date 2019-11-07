@@ -1,0 +1,25 @@
+on: push
+name: CI
+jobs:
+  phpunit:
+    runs-on: ubuntu-latest
+    container:
+      image: juampynr/drupal8ci:latest
+
+    services:
+      mariadb:
+        image: quay.io/juampynr/drupal8-github-actions:latest
+        ports:
+          - 33306:3306
+
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+
+      - name: Build project
+        run: |
+          robo job:build
+
+      - name: Run Testsuite
+        run: vendor/bin/robo job:unit-tests
