@@ -1,5 +1,8 @@
 # Drupal 8 and GitHub Actions
 
+![](https://github.com/juampynr/drupal8-github-actions/.github/workflows/ci.yml/badge.svg)
+
+
 This project defines a GitHub Actions workflow to run a set of Continuous
 Integration jobs when code is pushed to https://github.com/juampynr/drupal8-github-actions.
 
