@@ -85,6 +85,6 @@ jobs:
           robo job:build
 
       - name: Run existing site tests
-        run:
-          - vendor/bin/robo run:chrome-headless &
-          - vendor/bin/robo job:existing-site-tests
+        run: |
+          vendor/bin/robo run:chrome-headless &
+          vendor/bin/robo job:existing-site-tests
