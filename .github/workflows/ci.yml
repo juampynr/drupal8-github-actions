@@ -1,4 +1,4 @@
-on: push
+on: [push, pull_request]
 name: Tests and code
 jobs:
   phpunit:
@@ -83,6 +83,9 @@ jobs:
       - name: Build project
         run: |
           robo job:build
+
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v1
 
       - name: Run existing site tests
         run: |
