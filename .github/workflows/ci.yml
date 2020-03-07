@@ -84,6 +84,7 @@ jobs:
         run: |
           robo job:build
           printenv
+          pwd
 
       - name: Run existing site tests
         run: |
