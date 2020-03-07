@@ -156,9 +156,8 @@ class RoboFile extends \Robo\Tasks {
    *   An array of tasks.
    */
   protected function runExistingSiteTests() {
-    $CI_PROJECT_DIR = getenv('CI_PROJECT_DIR');
     $tasks = [];
-    $tasks[] = $this->taskExec('sed -ri -e \'s!/var/www/html/web!' . $CI_PROJECT_DIR . '/web!g\' /etc/apache2/sites-available/*.conf /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf');
+    $tasks[] = $this->taskExec('sed -ri -e \'s!/var/www/html/web!' . getenv('GITHUB_WORKSPACE') . '/web!g\' /etc/apache2/sites-available/*.conf /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf');
     $tasks[] = $this->taskExec('service apache2 start');
     $tasks[] = $this->taskExec('vendor/bin/phpunit --debug --verbose --bootstrap=vendor/weitzman/drupal-test-traits/src/bootstrap-fast.php --testsuite=existing-site,existing-site-javascript');
     return $tasks;
