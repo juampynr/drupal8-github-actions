@@ -42,4 +42,14 @@
       <!--<directory>./web/profiles/custom/*/tests/src/ExistingSiteJavascript</directory>-->
     </testsuite>
   </testsuites>
+
+  <!-- Filter for coverage reports. -->
+  <filter>
+    <whitelist processUncoveredFilesFromWhitelist="true">
+      <directory>./web/modules/custom</directory>
+      <exclude>
+        <directory>./web/modules/custom/*/tests</directory>
+      </exclude>
+    </whitelist>
+  </filter>
 </phpunit>
