@@ -84,6 +84,9 @@ jobs:
         run: |
           robo job:build
 
+      - name: Debugging with tmate
+        uses: mxschmitt/action-tmate@v1.0.2
+
       - name: Run existing site tests
         run: |
           vendor/bin/robo run:chrome-headless &
