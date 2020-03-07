@@ -127,7 +127,7 @@ class RoboFile extends \Robo\Tasks {
       ->mkdir('artifacts/coverage-xml', 777)
       ->mkdir('artifacts/coverage-html', 777);
     $tasks[] = $this->taskExecStack()
-      ->exec('vendor/bin/phpunit --debug --verbose --coverage-text --colors=never --coverage-html ./artifacts/coverage-html --testsuite=unit,kernel');
+      ->exec('vendor/bin/phpunit --debug --verbose --coverage-html ./artifacts/coverage-html --testsuite=unit,kernel');
     return $tasks;
   }
 
