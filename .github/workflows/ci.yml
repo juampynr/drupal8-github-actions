@@ -62,7 +62,9 @@ jobs:
           robo job:build
 
       - name: Assess code coverage
-        run: vendor/bin/robo job:coverage-report
+        run: |
+          vendor/bin/robo job:coverage-report
+          ls -hal artifacts/coverage-html
 
       - name: Archive code coverage results
         uses: actions/upload-artifact@v1
