@@ -84,9 +84,6 @@ jobs:
         run: |
           robo job:build
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v1
-
       - name: Run existing site tests
         run: |
           vendor/bin/robo run:chrome-headless &

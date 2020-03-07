@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<phpunit bootstrap="web/core/tests/bootstrap.php">
+<phpunit bootstrap="vendor/weitzman/drupal-test-traits/src/bootstrap-fast.php">
   <php>
     <ini name="memory_limit" value="-1"/>
     <env name="SIMPLETEST_BASE_URL" value=""/>
