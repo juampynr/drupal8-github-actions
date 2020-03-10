@@ -7,6 +7,10 @@
      to run alongside core's test types. -->
 <phpunit bootstrap="vendor/weitzman/drupal-test-traits/src/bootstrap.php">
   <php>
+    <!-- Set error reporting to E_ALL. -->
+    <ini name="error_reporting" value="32767"/>
+    <!-- Do not limit the amount of memory tests take to run. -->
+    <ini name="memory_limit" value="-1"/>
     <env name="DTT_BASE_URL" value=""/>
     <env name="DTT_API_URL" value=""/>
     <!-- <env name="DTT_MINK_DRIVER_ARGS" value='["chrome", { "chromeOptions" : { "w3c": false } }, "http://localhost:4444/wd/hub"]'/> -->
