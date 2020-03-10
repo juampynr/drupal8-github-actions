@@ -123,11 +123,8 @@ class RoboFile extends \Robo\Tasks {
    */
   protected function runCoverageReport() {
     $tasks = [];
-    $tasks[] = $this->taskFilesystemStack()
-      ->mkdir('artifacts/coverage-xml', 777)
-      ->mkdir('artifacts/coverage-html', 777);
     $tasks[] = $this->taskExecStack()
-      ->exec('vendor/bin/phpunit --debug --verbose --coverage-html ../artifacts/coverage-html --testsuite=unit,kernel');
+      ->exec('vendor/bin/phpunit --debug --verbose --coverage-html ../coverage --testsuite=unit,kernel');
     return $tasks;
   }
 

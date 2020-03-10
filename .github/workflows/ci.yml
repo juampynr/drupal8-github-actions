@@ -64,13 +64,13 @@ jobs:
       - name: Assess code coverage
         run: |
           vendor/bin/robo job:coverage-report
-          ls -hal artifacts/coverage-html
+          ls -hal coverage
 
       - name: Archive code coverage results
         uses: actions/upload-artifact@v1
         with:
-          name: code-coverage-report
-          path: artifacts/coverage-html
+          name: coverage
+          path: coverage
 
   existing-site-tests:
     runs-on: ubuntu-latest
