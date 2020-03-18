@@ -2,6 +2,8 @@ This directory contains a Dockerfile and an SQL script to install a database ins
 MariaDB image. It is based on the article
 [Achieve Rocketship-Fast Jobs in CircleCI by Preinstalling the Database](https://www.lullabot.com/articles/rocket-ship-fast-jobs-circleci-preinstalling-database).
 
+The resulting image from building the Dockerfile in this directory is hosted at https://quay.io/repository/juampynr/drupal8-github-actions?tab=tags.
+
 # Description
 
 This Dockerfile creates and populates a database with the name drupal8. 
