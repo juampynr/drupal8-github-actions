@@ -22,7 +22,7 @@ Here is how to build and push a new image for the first time:
 ```
 cd scripts-database
 docker login quay.io
-docker build --tag quay.io/juampynr/drupal8-github-actions:latest
+docker build --tag quay.io/juampynr/drupal8-github-actions:latest .
 docker push quay.io/juampynr/drupal8-github-actions:latest
 ```
 
